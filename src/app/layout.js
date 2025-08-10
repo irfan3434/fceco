@@ -14,9 +14,9 @@ export const metadata = {
     images: ["/assets/fcecologo1.webp"], // put an OG image in /public/assets
     type: "website"
   },
-  twitter: {
-    card: "summary_large_image"
-  }
+  icons: {
+    icon: "/favicon.webp",
+  },
 };
 
 
