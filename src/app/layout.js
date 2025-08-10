@@ -11,7 +11,7 @@ export const metadata = {
     description: "IT + AI + Environmental consultancy for sustainable cities.",
     url: process.env.NEXT_PUBLIC_SITE_URL || "https://fceco.vercel.app",
     siteName: "FC ECO",
-    images: ["/assets/og.jpg"], // put an OG image in /public/assets
+    images: ["/assets/fcecologo1.webp"], // put an OG image in /public/assets
     type: "website"
   },
   twitter: {
