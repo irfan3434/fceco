@@ -166,7 +166,7 @@ const ImageBanner = ({
             >
               {block.buttonLabel1 && (
                 <a
-                  href={block.buttonLink1 || '#'}
+                  href={block.buttonLink1 || '/services'}
                   className={`b-button${
                     block.buttonStyleSecondary1 ? ' button--secondary' : ' button--primary'
                   }`}
@@ -178,7 +178,7 @@ const ImageBanner = ({
               )}
               {block.buttonLabel2 && (
                 <a
-                  href={block.buttonLink2 || '#'}
+                  href={block.buttonLink2 || '/services'}
                   className={`b-button${
                     block.buttonStyleSecondary2 ? ' button--secondary' : ' button--primary'
                   }`}

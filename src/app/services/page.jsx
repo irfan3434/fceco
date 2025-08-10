@@ -61,6 +61,15 @@ const servicesData = [
     imageAlt: 'Artificial Intelligence Services'
   },
   {
+    id: 'drones-usage',
+    title: 'Drones Utilization',
+    category: 'Environmental',
+    shortDescription: ['Aerial Surveys', 'Geographic Information Systems'],
+    detailedDescription: 'Use of Drones In Aerial Surveys and Geographic Information Systems to provide a faster, more cost-effective, and versatile way to collect and analyze spatial data. Enabling high-resolution imagery capture and accurate mapping, transforming various fields like urban planning, environmental monitoring, and disaster management.',
+    imageUrl: '/assets/20.webp',
+    imageAlt: 'Drones Utilization Services'
+  },
+  {
     id: 'cctv',
     title: 'CCTV',
     category: 'IT',
@@ -68,6 +77,15 @@ const servicesData = [
     detailedDescription: 'We are renowned for providing comprehensive CCTV solutions with advanced surveillance systems designed to ensure 24/7 security. Our systems offer real-time monitoring, high-quality recording, and intelligent analytics that detect unusual activity, enhance situational awareness, and enable quick response to potential threats.',
     imageUrl: '/assets/12.webp',
     imageAlt: 'CCTV Security Solutions'
+  },
+  {
+    id: 'GIS',
+    title: 'GIS',
+    category: 'IT',
+    shortDescription: ['GIS Services', 'GIS WEB Applications'],
+    detailedDescription: 'FCECO leverages web technologies to manage, analyze, and visualize spatial data, enabling access and interaction with geographic information through web browsers, mobile apps, or other client interfaces, allows users to access and share spatial information from anywhere with an internet connection, fostering collaboration and knowledge sharing. ',
+    imageUrl: '/assets/21.webp',
+    imageAlt: 'GIS Applications'
   },
   {
     id: 'access-control',
@@ -131,7 +149,8 @@ const servicesData = [
     detailedDescription: 'Our Environmental Implementation services are designed to promote sustainable practices and compliance. Through Environmental Contracting, we deliver end-to-end solutions for project execution, ensuring adherence to environmental standards at every phase.',
     imageUrl: '/assets/19.webp',
     imageAlt: 'Environmental Implementation Services'
-  }
+  },
+  
 ];
 
 const filterOptions = [

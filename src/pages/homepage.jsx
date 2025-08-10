@@ -42,7 +42,7 @@ const HomePage = () => {
       {
         type: 'buttons',
         buttonLabel1: 'Explore',
-        buttonLink1: '/solutions',
+        buttonLink1: '/services',
         buttonStyleSecondary2: true
       }
     ],
