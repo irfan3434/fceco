@@ -1,0 +1,334 @@
+.value-proposition-strip {
+    background: linear-gradient(135deg, #f8fcfb 0%, #f3d8a5 100%);
+    border-bottom: 2px solid #e1f5f0;
+    padding: 3.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.value-proposition-strip::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #4fd1c7, transparent);
+    opacity: 0.6;
+}
+
+.strip-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.strip-heading {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 3rem;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 2.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    flex: 1;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 1.5rem;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    height: 150px;
+}
+
+.feature-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 0.9);
+    border-color: #4fd1c7;
+}
+
+.feature-item:focus {
+    outline: 2px solid #4fd1c7;
+    outline-offset: 2px;
+}
+
+.feature-icon-wrapper {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.feature-icon {
+    background: #076075;
+    color: white;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    box-shadow: 0 4px 20px rgba(79, 209, 199, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.feature-item:hover .feature-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 8px 30px rgba(79, 209, 199, 0.4);
+}
+
+.icon-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 70px;
+    height: 70px;
+    background: radial-gradient(circle, rgba(79, 209, 199, 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.feature-item:hover .icon-glow {
+    opacity: 1;
+}
+
+.feature-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.feature-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+    color: #1f2937;
+    line-height: 1.4;
+}
+
+.feature-description {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #6b7280;
+    line-height: 1.5;
+}
+
+.feature-hover-indicator {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: all 0.3s ease;
+    color: #4fd1c7;
+}
+
+.feature-item:hover .feature-hover-indicator {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.cta-section {
+    flex-shrink: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    justify-content: center;
+}
+
+.cta-section.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.6s;
+}
+
+.cta-button {
+    background: #076075;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 20px rgba(79, 209, 199, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.cta-button:hover::before {
+    left: 100%;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(79, 209, 199, 0.4);
+}
+
+.cta-button:active {
+    transform: translateY(0);
+}
+
+.cta-button:focus {
+    outline: 2px solid #4fd1c7;
+    outline-offset: 2px;
+}
+
+.nodec{
+    text-decoration: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .strip-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2.5rem;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .value-proposition-strip {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .feature-item {
+        padding: 1.25rem;
+    }
+
+    .feature-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .feature-title {
+        font-size: 1rem;
+    }
+
+    .feature-description {
+        font-size: 0.875rem;
+    }
+
+    .cta-button {
+        width: 70%;
+        justify-content: center;
+        font-size: 0.9rem;
+        padding: 0.875rem 1.5rem;
+        align-items: center;
+    }
+    
+    .strip-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.5rem;
+    }
+
+    .strip-heading {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .feature-item {
+        gap: 1rem;
+        padding: 1rem;
+        height: 145px;
+    }
+
+    .cta-section {
+        margin-top: 1rem;
+        display: flex;
+        margin-top: 1rem;
+        justify-content: center;
+    }
+
+        .cta-button {
+        width:100%;
+        justify-content: center;
+        font-size: 0.9rem;
+        padding: 0.875rem 1.5rem;
+        align-items: center;
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+
+    .feature-item,
+    .cta-button,
+    .feature-icon,
+    .cta-section {
+        transition: none;
+    }
+
+    .feature-item {
+        transform: none !important;
+        opacity: 1 !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .feature-item {
+        border: 2px solid #000;
+        background: #fff;
+    }
+
+    .feature-icon {
+        background: #000;
+        color: #fff;
+    }
+
+    .cta-button {
+        background: #000;
+        border: 2px solid #000;
+    }
+}

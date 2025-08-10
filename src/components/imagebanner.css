@@ -1,0 +1,793 @@
+.banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+}
+
+.banner-container:before {
+    content: "";
+    opacity: .6;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0), #4fd1c7, rgba(0, 0, 0, 0));
+    height: 1px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+/* Banner Height Variants */
+.banner--small { 
+  min-height: 40vh; 
+}
+
+.banner--medium { 
+  min-height: 60vh; 
+}
+
+.banner--large { 
+  min-height: 80vh; 
+}
+
+.banner--adapt { 
+  min-height: auto; 
+}
+
+/* Dynamic Overlay */
+.banner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, var(--overlay-opacity, 0));
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Adaptive Height Pseudo Elements */
+.banner--adapt::before,
+.banner--adapt .banner__media::before,
+.banner--adapt:not(.banner--mobile-bottom) .banner__content::before {
+  padding-bottom: var(--aspect-ratio, 60%);
+  content: '';
+  display: block;
+}
+
+/* ================================
+   Media Styles
+   ================================ */
+.banner__media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.banner__media.placeholder {
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner__media-half {
+  width: 50%;
+}
+
+.banner__media img,
+.banner__media-image-half {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ================================
+   RESPONSIVE IMAGE SYSTEM
+   ================================ */
+
+/* Desktop Image - Default */
+.banner__media-desktop {
+  display: block;
+}
+
+/* Mobile Image - Hidden by default */
+.banner__media-mobile {
+  display: none;
+}
+
+/* Tablet Image - Hidden by default */
+.banner__media-tablet {
+  display: none;
+}
+
+/* Background Image Approach */
+.banner__media-bg {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* Desktop background image */
+.banner__media-bg--desktop {
+  background-image: var(--desktop-image);
+}
+
+/* Tablet background image */
+.banner__media-bg--tablet {
+  background-image: var(--tablet-image);
+}
+
+/* Mobile background image */
+.banner__media-bg--mobile {
+  background-image: var(--mobile-image);
+}
+
+.placeholder-svg {
+  width: 200px;
+  height: 200px;
+  opacity: 0.5;
+}
+
+/* ================================
+   Content Positioning
+   ================================ */
+.banner__content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  min-height: inherit;
+}
+
+/* Desktop Content Positioning - 9-point grid */
+.banner__content--top-left { 
+  justify-content: flex-start; 
+  align-items: flex-start; 
+}
+
+.banner__content--top-center { 
+  justify-content: flex-start; 
+  align-items: center; 
+}
+
+.banner__content--top-right { 
+  justify-content: flex-start; 
+  align-items: flex-end; 
+}
+
+.banner__content--middle-left { 
+  justify-content: center; 
+  align-items: flex-start; 
+}
+
+.banner__content--middle-center { 
+  justify-content: center; 
+  align-items: center; 
+}
+
+.banner__content--middle-right { 
+  justify-content: center; 
+  align-items: flex-end; 
+}
+
+.banner__content--bottom-left { 
+  justify-content: flex-end; 
+  align-items: flex-start; 
+}
+
+.banner__content--bottom-center { 
+  justify-content: flex-end; 
+  align-items: center; 
+}
+
+.banner__content--bottom-right { 
+  justify-content: flex-end; 
+  align-items: flex-end; 
+}
+
+/* Content Box */
+.banner__box {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  max-width: 600px;
+  width: 100%;
+}
+
+.banner--desktop-transparent .banner__box {
+  background: transparent;
+  backdrop-filter: none;
+}
+
+/* ================================
+   Content Alignment
+   ================================ */
+.banner--content-align-left .banner__box { 
+  text-align: left; 
+}
+
+.banner--content-align-center .banner__box { 
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner--content-align-right .banner__box { 
+  text-align: right; 
+}
+
+/* ================================
+   Typography
+   ================================ */
+.banner__heading {
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.banner__heading.h2 { 
+  font-size: 1.5rem; 
+}
+
+.banner__heading.h1 { 
+  font-size: 2rem; 
+}
+
+.banner__heading.h0 { 
+  font-size: 2.5rem; 
+}
+
+.banner__heading.hxl { 
+  font-size: 1.5rem; 
+}
+
+.banner__heading.hxxl { 
+  font-size: 3.5rem; 
+}
+
+.banner__text {
+  margin: 1rem 0;
+  line-height: 1.6;
+}
+
+.banner__text.body { 
+  font-size: 1rem; 
+}
+
+.banner__text.subtitle { 
+  font-size: 1.125rem; 
+  font-weight: 500; 
+}
+
+.banner__text.caption-with-letter-spacing { 
+  font-size: 0.875rem; 
+  letter-spacing: 0.1em; 
+  text-transform: uppercase; 
+  font-weight: 600;
+}
+
+.banner__text p {
+  margin: 0;
+}
+
+/* ================================
+   Buttons
+   ================================ */
+.banner__buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.banner__buttons--multiple {
+  flex-wrap: wrap;
+}
+
+.b-button {
+  display: inline-block;
+  padding: 0.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 0.95rem;
+  min-width: 100px;
+  text-align: center;
+  border: 2px solid transparent;
+}
+
+.button--primary {
+  background: #fbf1e4;
+  color: #080808;
+  border-color: #fbf1e4;
+}
+
+.button--primary:hover {
+  background: #333;
+  color: #fff;
+  border-color: #333;
+}
+
+.button--secondary {
+  background: transparent;
+  color: #000;
+  border-color: #000;
+}
+
+.button--secondary:hover {
+  background: #000;
+  color: #fff;
+}
+
+.button[aria-disabled="true"] {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ================================
+   Color Schemes
+   ================================ */
+.color-scheme-1 { 
+  background: rgba(251, 241, 228, 0.4); 
+  color: #000; 
+}
+
+.color-scheme-2 { 
+  background: rgba(0, 0, 0, 0.9); 
+  color: #fff; 
+}
+
+.color-scheme-2 .button--secondary {
+  color: #fff;
+  border-color: #fff;
+}
+
+.color-scheme-2 .button--secondary:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* ================================
+   Animation Styles
+   ================================ */
+.animate--fade-in {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.animate--fade-in-active {
+  opacity: 1;
+}
+
+.animate--slide-in {
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.animate--slide-in-active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Image Animation Behaviors */
+.animate--zoom-in img {
+  transform: scale(1);
+  transition: transform 0.6s ease;
+}
+
+.animate--zoom-in:hover img {
+  transform: scale(1.05);
+}
+
+.animate--ambient img {
+  transform: scale(1.1);
+  transition: transform 20s ease-in-out;
+  animation: ambient-float 20s ease-in-out infinite alternate;
+}
+
+@keyframes ambient-float {
+  0% { transform: scale(1.1) translateX(0) translateY(0); }
+  25% { transform: scale(1.1) translateX(-10px) translateY(-5px); }
+  50% { transform: scale(1.1) translateX(10px) translateY(5px); }
+  75% { transform: scale(1.1) translateX(-5px) translateY(10px); }
+  100% { transform: scale(1.1) translateX(5px) translateY(-10px); }
+}
+
+.animate--fixed img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* ================================
+   TABLET STYLES - MAX-WIDTH 768PX
+   ================================ */
+@media screen and (max-width: 768px) {
+  /* Banner Heights for Tablet */
+  .banner--small { 
+    min-height: 35vh; 
+  }
+  
+  .banner--medium { 
+    min-height: 50vh; 
+  }
+  
+  .banner--large { 
+    min-height: 65vh; 
+  }
+
+  /* Content Adjustments */
+  .banner__content {
+    padding: 1.5rem;
+    max-width: 100%;
+  }
+
+  .banner__box {
+    max-width: 500px;
+    padding: 1.75rem;
+  }
+
+  /* ================================
+     RESPONSIVE IMAGE SWITCHING - TABLET
+     ================================ */
+  
+  /* Hide desktop image, show tablet image */
+  .banner__media-desktop {
+    display: none;
+  }
+  
+  .banner__media-tablet {
+    display: block;
+  }
+  
+  /* If no tablet-specific image, fallback to desktop */
+  .banner:not(.banner--has-tablet-image) .banner__media-desktop {
+    display: block;
+  }
+  
+  /* Background image switching for tablet */
+  .banner__media-bg--desktop {
+    background-image: var(--tablet-image, var(--desktop-image));
+  }
+
+  /* Typography Scaling for Tablet */
+  .banner__heading.hxxl { 
+    font-size: 3rem; 
+  }
+  
+  .banner__heading.hxl { 
+    font-size: 1.5rem; 
+  }
+  
+  .banner__heading.h0 { 
+    font-size: 2rem; 
+  }
+  
+  .banner__heading.h1 { 
+    font-size: 1.75rem; 
+  }
+  
+  .banner__heading.h2 { 
+    font-size: 1.375rem; 
+  }
+
+  /* Button Adjustments */
+  .banner__buttons {
+    gap: 0.75rem;
+    justify-content: center;
+  }
+
+  .button {
+    min-width: 120px;
+    padding: 0.875rem 1.75rem;
+  }
+
+  /* Placeholder SVG Size */
+  .placeholder-svg {
+    width: 150px;
+    height: 150px;
+  }
+
+  /* Adaptive Height Tablet */
+  .banner--adapt::before,
+  .banner--adapt .banner__media::before,
+  .banner--adapt:not(.banner--mobile-bottom) .banner__content::before {
+    padding-bottom: var(--aspect-ratio, 65%);
+  }
+}
+
+/* ================================
+   MOBILE STYLES - MAX-WIDTH 480PX
+   ================================ */
+@media screen and (max-width: 480px) {
+  /* Banner Heights for Mobile */
+  .banner--small { 
+    min-height: 30vh; 
+  }
+  
+  .banner--medium { 
+    min-height: 45vh; 
+  }
+  
+  .banner--large { 
+    min-height: 60vh; 
+  }
+
+  /* Content Adjustments */
+  .banner__content {
+    padding: 1rem;
+  }
+
+  .banner__box {
+    padding: 1.5rem;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .b-button {
+    font-size: 0.875rem;
+    padding: 0.375rem;
+    color: #080808;
+    background: #f1cea0;
+    border-color: #f1cea0;
+  }
+
+  /* ================================
+     RESPONSIVE IMAGE SWITCHING - MOBILE
+     ================================ */
+  
+  /* Hide desktop and tablet images, show mobile image */
+  .banner__media-desktop,
+  .banner__media-tablet {
+    display: none;
+  }
+  
+  .banner__media-mobile {
+    display: block;
+  }
+  
+  /* If no mobile-specific image, fallback hierarchy: tablet -> desktop */
+  .banner:not(.banner--has-mobile-image) .banner__media-tablet {
+    display: block;
+  }
+  
+  .banner:not(.banner--has-mobile-image):not(.banner--has-tablet-image) .banner__media-desktop {
+    display: block;
+  }
+  
+  /* Background image switching for mobile */
+  .banner__media-bg--desktop {
+    background-image: var(--mobile-image, var(--tablet-image, var(--desktop-image)));
+  }
+  
+  /* Mobile-specific object positioning for better focus */
+  .banner__media-mobile img,
+  .banner__media img {
+    object-position: center center;
+  }
+
+  /* Mobile Content Alignment */
+  .banner--content-align-mobile-left .banner__box { 
+    text-align: left; 
+    align-items: flex-start;
+  }
+
+  .banner--content-align-mobile-center .banner__box { 
+    text-align: center;
+    align-items: center;
+  }
+
+  .banner--content-align-mobile-right .banner__box { 
+    text-align: right;
+    align-items: flex-end;
+  }
+
+  /* Stacked Images on Mobile */
+  .banner--stacked .banner__media-half {
+    width: 100%;
+    height: 50%;
+  }
+
+  .banner--stacked .banner__media-half:last-of-type {
+    top: 50%;
+  }
+
+  /* Mobile Bottom Text */
+  .banner--mobile-bottom {
+    flex-direction: column;
+  }
+
+  .banner--mobile-bottom .banner__content {
+    position: static;
+    background: transparent;
+    margin-top: auto;
+    min-height: auto;
+    justify-content: flex-start;
+  }
+
+  .banner--mobile-bottom .banner__box {
+    background: #fff;
+    backdrop-filter: none;
+    margin-bottom: 20px;
+    opacity: 0.8;
+  }
+
+  /* Mobile Buttons */
+  .banner__buttons {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+    margin-top: 0.9rem;
+  }
+
+  .banner__buttons .button {
+    width: 100%;
+    text-align: center;
+    min-width: auto;
+    padding: 0.875rem 1rem;
+    font-size: 1rem;
+  }
+
+  /* Mobile Typography */
+  .banner__heading.hxxl { 
+    font-size: 2.25rem; 
+    line-height: 1.1;
+  }
+  
+  .banner__heading.hxl { 
+    font-size: 1rem; 
+  }
+  
+  .banner__heading.h0 { 
+    font-size: 1.625rem; 
+  }
+  
+  .banner__heading.h1 { 
+    font-size: 1.375rem; 
+  }
+  
+  .banner__heading.h2 { 
+    font-size: 1.125rem; 
+  }
+
+  /* Mobile Text Sizes */
+  .banner__text.subtitle { 
+    font-size: 1rem; 
+  }
+  
+  .banner__text.body { 
+    font-size: 0.95rem; 
+  }
+  
+  .banner__text.caption-with-letter-spacing { 
+    font-size: 0.8rem; 
+  }
+
+  /* Placeholder SVG Size */
+  .placeholder-svg {
+    width: 120px;
+    height: 120px;
+  }
+
+  /* Adaptive Height Mobile */
+  .banner--adapt::before,
+  .banner--adapt .banner__media::before,
+  .banner--adapt:not(.banner--mobile-bottom) .banner__content::before {
+    padding-bottom: var(--aspect-ratio, 75%);
+  }
+
+  /* Reduce animations on mobile for performance */
+  .animate--ambient img {
+    animation-duration: 30s;
+  }
+}
+
+/* ================================
+   ACCESSIBILITY & PERFORMANCE
+   ================================ */
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate--fade-in,
+  .animate--slide-in,
+  .animate--zoom-in img,
+  .animate--ambient img {
+    transition: none;
+    animation: none;
+    transform: none;
+  }
+}
+
+/* Focus Styles */
+.button:focus-visible {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .banner__box {
+    border: 2px solid currentColor;
+  }
+  
+  .button {
+    border-width: 3px;
+  }
+}
+
+
+
+/* Container Queries Support for Modern Browsers */
+@supports (container-type: inline-size) {
+  .banner {
+    container-type: inline-size;
+  }
+
+  @container (max-width: 480px) {
+    .banner__box {
+      padding: 1.25rem;
+    }
+  }
+}
+
+/* Print Styles */
+@media print {
+  .banner {
+    break-inside: avoid;
+  }
+  
+  .banner__media {
+    display: none;
+  }
+  
+  .banner::after {
+    display: none;
+  }
+  
+  .banner__box {
+    background: white;
+    backdrop-filter: none;
+    box-shadow: none;
+  }
+}
+
+
+.page-width {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.content-container {
+  width: 100%;
+}
+
+.content-container--full-width-mobile {
+  width: 100%;
+}
+
+
+@media screen and (max-width: 480px) {
+  .page-width {
+    padding: 0 0.75rem;
+  }
+}
+
