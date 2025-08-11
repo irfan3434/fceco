@@ -15,7 +15,7 @@ const PROJECTS = [
     details: "Led the digital transformation for Riyadh's green spaces, introducing IoT sensors and real-time data dashboards for city planners.",
     technologies: ["AI/ML", "IoT", "React", "Node.js"],
     duration: "8 months",
-    impact: "22% reduction in energy usage"
+    impact: "15% reduction in energy usage"
   },
   {
     id: 2,
@@ -28,12 +28,12 @@ const PROJECTS = [
     details: "Successfully reduced peak energy usage by 22% for a major Saudi industrial hub, using predictive analytics and demand response.",
     technologies: ["Python", "TensorFlow", "AWS", "React"],
     duration: "12 months",
-    impact: "22% energy reduction"
+    impact: "22% reduction in energy consumption"
   },
   {
     id: 3,
     title: "Vision 2030 Mobility",
-    description: "Concept development for sustainable public transportation in KSA.",
+    description: "Concept development for sustainable public transportation in the Kingdom of Saudi Arabia.",
     image: "/assets/93.webp",
     category: "concept",
     status: "Under Review",
@@ -41,7 +41,7 @@ const PROJECTS = [
     details: "Proposed multi-modal transit hubs with carbon-neutral solutions, now under pilot review by Ministry of Transport.",
     technologies: ["Flutter", "Firebase", "Google Maps API"],
     duration: "6 months",
-    impact: "Pilot phase approved"
+    impact: "Pilot phase approved, execution in progress.."
   },
   {
     id: 4,
@@ -67,7 +67,7 @@ const PROJECTS = [
     details: "IoT network resulted in 18% water savings in Al Aqiq, with live public dashboards for accountability.",
     technologies: ["IoT", "React", "MongoDB", "Express"],
     duration: "9 months",
-    impact: "18% water savings"
+    impact: "18% water savings from initiatives"
   },
   {
     id: 6,
@@ -80,7 +80,7 @@ const PROJECTS = [
     details: "Enabling construction firms to trade and track eco-materials; pilot launching Q3 2024.",
     technologies: ["Next.js", "PostgreSQL", "Stripe API"],
     duration: "4 months",
-    impact: "Q3 2024 launch planned"
+    impact: "Quarter 3 2024 launch planned"
   }
 ];
 
