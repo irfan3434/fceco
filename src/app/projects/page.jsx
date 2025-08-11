@@ -41,7 +41,7 @@ const PROJECTS = [
     details: "Proposed multi-modal transit hubs with carbon-neutral solutions, now under pilot review by Ministry of Transport.",
     technologies: ["Flutter", "Firebase", "Google Maps API"],
     duration: "6 months",
-    impact: "Pilot phase is approved.."
+    impact: "Pilot phase approved, second phase started"
   },
   {
     id: 4,
