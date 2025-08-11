@@ -67,7 +67,7 @@ const PROJECTS = [
     details: "IoT network resulted in 18% water savings in Al Aqiq, with live public dashboards for accountability.",
     technologies: ["IoT", "React", "MongoDB", "Express"],
     duration: "9 months",
-    impact: "18% water savings from initiatives"
+    impact: "18% water savings"
   },
   {
     id: 6,
